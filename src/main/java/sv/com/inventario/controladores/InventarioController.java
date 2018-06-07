@@ -10,7 +10,7 @@ import sv.com.inventario.modelo.entity.Inventario;
 import sv.com.inventario.servicios.InventarioDTOService;
 import sv.com.inventario.servicios.InventarioService;
 
-@RequestMapping("/inventario")
+@RequestMapping("inventario")
 @RestController
 public class InventarioController {
 
