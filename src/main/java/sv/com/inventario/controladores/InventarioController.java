@@ -24,6 +24,7 @@ public class InventarioController {
     @GetMapping(value = "/")
     public ResponseEntity<?> consTodo() {
         try {
+        	
             return new ResponseEntity<>(inventariodtoService.consTodo(), HttpStatus.OK);
         }
         catch (Exception ex) {
