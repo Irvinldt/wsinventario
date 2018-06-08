@@ -13,16 +13,15 @@ import java.util.Date;
 public class Inventario extends AbstractBaseEntity {
 
     @Id
-    @NotNull
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ID_Inven")
+    @Column(name = "id_inven")
     private Long id;
 
     @ManyToOne(cascade = CascadeType.DETACH, fetch = FetchType.LAZY)
-    @JoinColumn(name = "ID_Pro")
+    @JoinColumn(name = "id_pro")
     private Producto producto;
 
-    @Column(name = "Existencias")
+    @Column(name = "existencias")
     private Integer existencias;
 
     @Column(name = "Fecha")
