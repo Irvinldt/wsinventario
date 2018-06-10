@@ -47,7 +47,7 @@ public class InventarioController {
     @PostMapping(value = "/")
     public ResponseEntity<?> guar(@RequestBody InventarioRequestDTO request) {
         try {
-            return new ResponseEntity<>(inventarioService.guarInventario(request), HttpStatus.OK);
+            return new ResponseEntity<>(inventariodtoService.guarInventario(request), HttpStatus.OK);
         }
         catch (Exception ex) {
             System.out.printf(ex.getMessage());
@@ -67,9 +67,9 @@ public class InventarioController {
     }
 
     @PutMapping(value = "/")
-    public ResponseEntity<?> modi(@RequestBody Inventario inventario) {
+    public ResponseEntity<?> modi(@RequestBody InventarioRequestDTO request) {
         try {
-            Inventario obje = inventarioService.actuInventario(inventario);
+            InventarioRequestDTO obje = inventariodtoService.actuInventario(request);
             if (obje.getId()!=null) {
                 return new ResponseEntity<>(obje, HttpStatus.OK);
             }

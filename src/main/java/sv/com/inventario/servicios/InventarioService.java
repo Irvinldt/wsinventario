@@ -11,10 +11,6 @@ public interface InventarioService {
 
     Inventario consInventario(Long id);
 
-    Inventario actuInventario(Inventario inventario);
-
-    Boolean guarInventario(InventarioRequestDTO request);
-
     Boolean elimInventario(Long id);
 
 

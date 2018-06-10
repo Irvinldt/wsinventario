@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import sv.com.inventario.controladores.dto.request.InventarioRequestDTO;
+import sv.com.inventario.modelo.entity.Inventario;
 import sv.com.inventario.modelo.repo.InventarioDTORepo;
 import sv.com.inventario.servicios.InventarioDTOService;
 
@@ -19,6 +20,16 @@ public class inventarioDTOServiceImpl implements InventarioDTOService{
 	public List<InventarioRequestDTO> consTodo() {
 		
 		return inventariodtorepo.findAll();
+	}
+
+	@Override
+	public InventarioRequestDTO actuInventario(InventarioRequestDTO request) {
+		return inventariodtorepo.save(request);
+	}
+
+	@Override
+	public InventarioRequestDTO guarInventario(InventarioRequestDTO request) {
+		return inventariodtorepo.save(request);
 	}
 
 }

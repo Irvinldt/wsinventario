@@ -30,24 +30,6 @@ public class InventarioServiceImpl implements InventarioService {
     }
 
     @Override
-    public Inventario actuInventario(Inventario inventario) {
-        return inventarioRepo.save(inventario);
-    }
-
-    @Override
-    public Boolean guarInventario(InventarioRequestDTO request) {
-        Boolean r;
-        Inventario inventario = new Inventario();
-        inventario.setExistencias(request.getExistencias());
-        inventario.setFecha(request.getFecha());
-        Producto producto = new Producto();
-        producto.setId(request.getProducto());
-        inventario.setProducto(producto);
-        r = inventarioRepo.save(inventario).getId() != null;
-        return r;
-    }
-
-    @Override
     public Boolean elimInventario(Long id) {
         if (inventarioRepo.existsById(id))
         {
