@@ -36,7 +36,7 @@ public class InventarioController {
     @GetMapping(value = "/{id}")
     public ResponseEntity<?> consUno(@PathVariable(value = "id") Long Id) {
         try {
-            return new ResponseEntity<>(inventarioService.consInventario(Id), HttpStatus.OK);
+            return new ResponseEntity<>(inventariodtoService.consInventario(Id), HttpStatus.OK);
         }
         catch (Exception ex) {
             System.out.printf(ex.getMessage());

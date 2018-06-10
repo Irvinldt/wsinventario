@@ -32,4 +32,9 @@ public class inventarioDTOServiceImpl implements InventarioDTOService{
 		return inventariodtorepo.save(request);
 	}
 
+	@Override
+    public InventarioRequestDTO consInventario(Long id) {
+        return inventariodtorepo.getOne(id);
+    }
+
 }

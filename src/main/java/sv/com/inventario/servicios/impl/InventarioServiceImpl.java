@@ -25,11 +25,6 @@ public class InventarioServiceImpl implements InventarioService {
     }
 
     @Override
-    public Inventario consInventario(Long id) {
-        return inventarioRepo.getOne(id);
-    }
-
-    @Override
     public Boolean elimInventario(Long id) {
         if (inventarioRepo.existsById(id))
         {
